@@ -1,0 +1,203 @@
+/* --- 1. Переменные и базовые стили --- */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --accent-color: #3498db;
+    --bg-color: #f8f9fa;
+    --text-color: #34495e;
+    --footer-bg: #2c3e50;
+    --footer-text: #ecf0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- 2. Шапка (Header) --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Внутренний контейнер */
+header > div {
+    display: flex;
+    justify-content: center; /* Центрируем всю навигацию */
+    align-items: center;
+}
+
+/* Стили для списка меню */
+header nav ul {
+    display: flex; /* Используем флексбокс для выравнивания */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 25px; /* Расстояние между пунктами */
+}
+
+/* --- НОВЫЕ СТИЛИ ДЛЯ КНОПОК (сделаем их больше) --- */
+header nav ul li a {
+    font-size: 18px; /* Увеличенный шрифт */
+    font-weight: 500;
+    padding: 12px 20px; /* Увеличенные отступы */
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    display: flex; /* Это поможет отцентрировать картинку-логотип */
+    align-items: center; /* Вертикальное центрирование содержимого ссылки */
+}
+
+header nav ul li a:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* --- СТИЛИ ДЛЯ ЛОГОТИПА (картинки) --- */
+/* Уменьшаем только ту картинку, которая находится внутри ссылки в меню */
+header nav ul li a img {
+    width: 60px; /* Задаем ширину логотипа */
+    height: auto; /* Сохраняем пропорции */
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    padding-top: calc(12px + 60px); /* Учитываем высоту шапки (padding + высота логотипа) */
+    
+    max-width: 1200px; /* Максимальная ширина блока с контентом */
+    margin-left: auto; /* Центрируем блок по горизонтали */
+    margin-right: auto;
+    
+    padding-left: 20px; /* Внутренние отступы для читаемости */
+    padding-right: 20px;
+}
+
+/* Центрируем все заголовки и текст в секциях главной страницы */
+main h1,
+main h2,
+main h3,
+main p,
+main a,
+main .cta-button,
+main .price-tag,
+main .card h3,
+main section a
+main .card p {
+    text-align: center;
+}
+
+/* --- 3. Карточки (Почему выбирают нас / Популярное) --- */
+.grid-4col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px; /* Отступы между карточками */
+}
+
+.card-grid > div,
+.card { /* Объединяем селекторы */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 20px;
+    
+    /* --- НОВЫЙ СТИЛЬ: ОБВОДКА КАРТОЧЕК --- */
+    border: 1px solid #e0e0e0; /* Добавляет сплошную рамку толщиной 1px */
+}
+
+.card-image {
+    width: 100%;
+    height: 325px;
+    border-radius: 8px; /* Скругление для картинки, как у карточки */
+}
+
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.price-tag {
+     font-size: 1.2em;
+     font-weight: bold;
+     color: var(--primary-color);
+     margin-top: 15px;
+ }
+
+/* --- Кнопка Призыва к Действию (CTA) --- */
+.cta-button {
+     display: inline-block;
+     background-color: var(--primary-color);
+     color: white;
+     padding: 12px 25px;
+     border-radius: 5px;
+     font-weight: bold;
+     transition: background-color 0.3s ease, transform 0.2s ease;
+ }
+
+ .cta-button:hover {
+     background-color: var(--secondary-color);
+     transform: translateY(-2px);
+ }
+
+/* --- Подвал (Footer) --- */
+footer {
+     background-color: var(--footer-bg);
+     padding-top: 40px; /* Отступ сверху внутри подвала */
+     padding-bottom: 40px; /* Отступ снизу внутри подвала */
+}
+
+footer > div {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     
+     max-width: 1200px; /* Центрируем контент внутри подвала */
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ footer div:nth-child(3) > div {
+      margin-right: 0; /* Убираем лишний отступ у последней колонки */
+ }
+
+ footer p,
+ footer h4,
+ footer a {
+      color: var(--footer-text);
+      font-size: 0.95em;
+ }
+
+ footer .copyright {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+ }

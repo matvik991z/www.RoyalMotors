@@ -8,103 +8,87 @@
 </head>
 <body>
     <header>
-        <div>
-            <a href="index.html">Логотип</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="catalog.html">Каталог</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                    <li><a href="feedback.html">Обратная связь</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section>
-            <div>
+    <div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li>
+                    <a href="index.html">
+                    <img src="img/logo.png" alt="Логотип">
+                    </a>
+                </li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="feedback.html">Обратная связь</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    
+        <main>
+        <div class="container">
+            <!-- Блок с приветствием -->
+            <section>
                 <h1>Добро пожаловать!</h1>
                 <p>Лучшие предложения и высокое качество — всё для вашего комфорта.</p>
-                <a href="catalog.html">Перейти в каталог</a>
-            </div>
-        </section>
+                <a href="catalog.html" class="cta-button">Перейти в каталог</a>
+            </section>
 
-        <section>
-            <div>
+            <!-- Блок "Почему выбирают нас" -->
+            <section>
                 <h2>Почему выбирают нас</h2>
-                <div>
+                <div class="grid-4col">
                     <div>
-                        <div></div>
+                        <div class="card-icon" style="background-color: #27ae60;"></div>
                         <h3>Качество</h3>
                         <p>Гарантируем отличный результат и проверенные материалы.</p>
                     </div>
                     <div>
-                        <div></div>
+                        <div class="card-icon" style="background-color: #f39c12;"></div>
                         <h3>Быстрота</h3>
                         <p>Оперативная работа и соблюдение сроков.</p>
                     </div>
                     <div>
-                        <div></div>
+                        <div class="card-icon" style="background-color: #8e44ad;"></div>
                         <h3>Доступно</h3>
                         <p>Цены, которые приятно удивят, без скрытых комиссий.</p>
                     </div>
                     <div>
-                        <div></div>
+                        <div class="card-icon" style="background-color: #d35400;"></div>
                         <h3>Поддержка</h3>
                         <p>Всегда на связи и помогаем с любым вопросом.</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section>
-            <div>
+            <!-- Блок "Популярное в этом месяце" -->
+            <section>
                 <h2>Популярное в этом месяце</h2>
-                <div>
+                <div class="grid-4col">
                     <div>
-                        <div></div>
-                        <div>
-                            <h3>Название услуги/товара</h3>
-                            <p>Краткое описание — поменяйте текст под свою тему.</p>
-                            <div>от 1000 ₽</div>
-                        </div>
+                        <img src="img/cat.jfif" alt="Удаление катализатора" class="card-image">
+                        <h3>Удаление катализатора</h3>
+                        <div class="price-tag">от 0 ₽</div>
                     </div>
                     <div>
-                        <div></div>
-                        <div>
-                            <h3>Другое предложение</h3>
-                            <p>Измените контент, фото и цену в соответствии с темой.</p>
-                            <div>1500 ₽</div>
-                        </div>
+                        <img src="img/maslo.jfif" alt="Удаление катализатора" class="card-image">
+                        <h3>Замена масла</h3>
+                        <div class="price-tag">от 0 ₽</div>
                     </div>
                     <div>
-                        <div></div>
-                        <div>
-                            <h3>Специальный курс</h3>
-                            <p>Успейте забронировать место по акции.</p>
-                            <div>бесплатно</div>
-                        </div>
+                        <img src="img/cat.jfif" alt="Удаление катализатора" class="card-image">
+                        <h3>Удаление катализатора</h3>
+                        <div class="price-tag">от 0 ₽</div>
                     </div>
-                    <div>
-                        <div></div>
-                        <div>
-                            <h3>Набор опций</h3>
-                            <p>Комбо выгоднее, чем по отдельности.</p>
-                            <div>2500 ₽</div>
-                        </div>
-                    </div>
+                    
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
+    
 
     <footer>
         <div>
-            <div>
-                <h4>О проекте</h4>
-                <p>Учебная верстка. Тема сайта задается студентом. Все страницы связаны.</p>
-            </div>
             <div>
                 <h4>Контакты</h4>
                 <p>Email: example@site.ru</p>
@@ -120,5 +104,19 @@
             <p>&copy; 2026 Все права защищены. Учебный проект.</p>
         </div>
     </footer>
+        <script>
+// Этот код будет отслеживать прокрутку страницы
+window.addEventListener('scroll', function() {
+    // Получаем элемент шапки
+    const header = document.querySelector('header');
+    
+    // Если пользователь прокрутил страницу вниз хотя бы на 10 пикселей
+    if (window.scrollY > 10) {
+        header.classList.add('scrolled'); // Добавляем класс 'scrolled'
+    } else {
+        header.classList.remove('scrolled'); // Иначе убираем его
+    }
+});
+</script>
 </body>
 </html>
